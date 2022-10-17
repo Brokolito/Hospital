@@ -1,28 +1,55 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.SimpleTimeZone;
 
 public class Hospital {
-	private List<Paciente> listaPacientes;
-	private List<Medico> listaMedicos;
+
 	private ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 	private ArrayList<Medico> medicos = new ArrayList<Medico>();
+	public Hospital() {
+		this.pacientes = pacientes;
+		this.medicos = medicos;
+	}
 
 	public void addPacientes(Paciente paciente) {
-		throw new UnsupportedOperationException();
+		pacientes.add(paciente);
 	}
 
 	public void addMedico(Medico medico) {
-		throw new UnsupportedOperationException();
+		medicos.add(medico);
 	}
 
-	public Paciente buscarPaciente(String nombre) {
-		throw new UnsupportedOperationException();
+	public void buscarPaciente(String nombre) {
+		for(int i=0;i<pacientes.size();i++){
+			if(pacientes.get(i).getNombre().equalsIgnoreCase(nombre)){
+				System.out.println(pacientes.get(i));
+			}
+		}
 	}
 
-	public Medico buscarMedico(String nombre) {
-		throw new UnsupportedOperationException();
+	public void buscarMedico(String nombre) {
+		for(int i=0;i<medicos.size();i++){
+			if(medicos.get(i).getNombre().equalsIgnoreCase(nombre)){
+				System.out.println(medicos.get(i));
+			}
+		}
 	}
 
-	public void removeMedico() {
-		throw new UnsupportedOperationException();
+	public void removeMedico(String nombre) {
+		int opcion;
+		System.out.println("Profesionales");
+		for(int i=0;i<medicos.size();i++){
+			System.out.println(pacientes.get(i));
+		}
+		for(int i=0;i<medicos.size();i++){
+			if(medicos.get(i).getNombre().equalsIgnoreCase(nombre)){
+				medicos.remove(i);
+			}
+		}
+		System.out.println("Profesionales");
+		for(int i=0;i<medicos.size();i++){
+			System.out.println(pacientes.get(i));
+		}
+
 	}
 }
